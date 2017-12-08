@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <ons-navigator id="navi">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center" id="toolbar-title">スケさん拡散</div>
+            </ons-toolbar>
+
+            <ons-tabbar position="bottom">
+
+                <ons-tab label="schedule" page="schedule.html" active>
+                    <ons-icon icon="fa-calendar" size="30px"></ons-icon>
+                    <!--<span style="font-size: 14px">時間割</span>-->
+                </ons-tab>
+
+                <ons-tab label="diffusion" page="diffusion.html">
+                    <ons-icon icon="fa-comments-o" size="30px"></ons-icon>
+                    <!--<span style="font-size: 14px">拡散</span>-->
+                </ons-tab>
+
+                <ons-tab label="settings" page="settings.html">
+                    <ons-icon icon="ion-gear-a" size="30px"></ons-icon>
+                    <!--<span style="font-size: 14px">設定</span>-->
+                </ons-tab>
+
+            </ons-tabbar>
+        </ons-page>
+
+        <!--時間割-->
+        <ons-template id="schedule.html">
+            <ons-page id="first-page">
+                <p style="text-align: center;">
+                    時間割画面
+                </p>
+            </ons-page>
+        </ons-template>
+
+        <ons-template id="diffusion.html">
+
+            <!--拡散-->
+            <ons-page id="second-page">
+                <ons-list>
+                    <ons-list-header class="center">拡散一覧</ons-list-header>
+                    <ons-list-item modifier="chevron" class="item" onclick="navi.pushPage('OOP2.html', { animation : 'slide' } )">
+                        <ons-row>
+                            <ons-col width="55px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-label"></span>
+                                </header>
+                                <p class="item-desc">オブジェクト指向プログラミング２</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron" class="item" onclick="navi.pushPage('ASC.html', { animation : 'slide' } )">
+                        <ons-row>
+                            <ons-col width="55px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-label"></span>
+                                </header>
+                                <p class="item-desc">セキュリティ応用</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron" class="item" onclick="navi.pushPage('LA.html', { animation : 'slide' } )">
+                        <ons-row>
+                            <ons-col width="55px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-label"></span>
+                                </header>
+                                <p class="item-desc">教養</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron" class="item" onclick="navi.pushPage('SQL.html', { animation : 'slide' } )">
+                        <ons-row>
+                            <ons-col width="55px">
+                                <div class="item-thum"></div>
+                            </ons-col>
+                            <ons-col>
+                                <header>
+                                    <span class="item-label"></span>
+                                </header>
+                                <p class="item-desc">SQL</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+            </ons-page>
+        </ons-template>
+
+        <!--設定-->
+        <ons-template id="settings.html">
+            <ons-page id="third-page">
+                <ons-list class="setting">
+                    <ons-list-header class="center">通知設定</ons-list-header>
+                    <ons-list-item>
+                        <div class="notifi">明日の時間割</div>
+                        <ons-button modifier="quiet" id="tomorrowTime" class="right">21:00</ons-button>
+                        <div class="right">
+                            <ons-switch checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="notifi">今日の時間割</div>
+                        <ons-button modifier="quiet" id="todayTime" class="right">7:00</ons-button>
+                        <div class="right">
+                            <ons-switch checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="notifi">1コマ目の授業を<br>時間で通知</div>
+                        <ons-button modifier="quiet" id="oneTime" class="right">9:00</ons-button>
+                        <div class="right">
+                            <ons-switch checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="notifi">1コマ目の授業を<br>校門で通知</div>
+                        <div class="right">
+                            <ons-switch checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div>拡散情報を受信時に通知</div>
+                        <div class="right">
+                            <ons-switch checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                        <div class="notifi">カウントダウン</div>
+                        <ons-button modifier="quiet" id="cntdwnTime" class="right">7:00</ons-button>
+                        <div class="right">
+                            <ons-switch id="cntdwn" checked></ons-switch>
+                        </div>
+                    </ons-list-item>
+                    <ons-list id="cntdwnItem">
+                        <ons-list-item>
+                            <div class="notifi">国家試験</div>
+                            <div class="right">
+                                <ons-switch id="cntdwn" checked></ons-switch>
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="notifi">運動会</div>
+                            <div class="right">
+                                <ons-switch id="cntdwn" checked></ons-switch>
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="notifi">J検</div>
+                            <div class="right">
+                                <ons-switch id="cntdwn" checked></ons-switch>
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="notifi">学校祭</div>
+                            <div class="right">
+                                <ons-switch id="cntdwn" checked></ons-switch>
+                            </div>
+                        </ons-list-item>
+                    </ons-list>
+                </ons-list>
+            </ons-page>
+        </ons-template>
+    </ons-navigator>
+
+
+    <!-- OOP2詳細 -->
+    <ons-template id="OOP2.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center" id="toolbar-title">スケさん拡散</div>
+            </ons-toolbar>
+            <ons-list-header class="center">オブジェクト指向プログラミング２</ons-list-header>
+            <ons-list id="msg" class="comment">
+            </ons-list>
+            <div class="send-area">
+                <ons-list id="pic"></ons-list>
+                <ons-icon icon="fa-plus" size="40px" id="camera" class="send-area__camera" onClick="camera();"></ons-icon>
+                <ons-input id="text" placeholder="メッセージ" class="send-area__input"></ons-input>
+                <ons-button modifier="quiet" class="send-area__btn" onClick="doClick();">
+                    <ons-icon icon="ion-android-send" size="20px"></ons-button>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <!-- セキュ応詳細 -->
+    <ons-template id="ASC.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center" id="toolbar-title">スケさん拡散</div>
+            </ons-toolbar>
+            <ons-list-header class="center">セキュリティ応用</ons-list-header>
+            <ons-list id="msg" class="comment">
+            </ons-list>
+            <div class="send-area">
+                <ons-list id="pic"></ons-list>
+                <ons-icon icon="fa-plus" size="40px" id="camera" class="send-area__camera" onClick="camera();"></ons-icon>
+                <ons-input id="text" placeholder="メッセージ" class="send-area__input"></ons-input>
+                <ons-button modifier="quiet" class="send-area__btn" onClick="doClick();">
+                    <ons-icon icon="ion-android-send" size="20px"></ons-button>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <!-- 教養詳細 -->
+    <ons-template id="LA.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center" id="toolbar-title">スケさん拡散</div>
+            </ons-toolbar>
+            <ons-list-header class="center">教養</ons-list-header>
+            <ons-list id="msg" class="comment">
+            </ons-list>
+            <div class="send-area">
+                <ons-list id="pic"></ons-list>
+                <ons-icon icon="fa-plus" size="40px" id="camera" class="send-area__camera" onClick="camera();"></ons-icon>
+                <ons-input id="text" placeholder="メッセージ" class="send-area__input"></ons-input>
+                <ons-button modifier="quiet" class="send-area__btn" onClick="doClick();">
+                    <ons-icon icon="ion-android-send" size="20px"></ons-icon>
+                </ons-button>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <!-- SQL詳細 -->
+    <ons-template id="SQL.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>Back</ons-back-button>
+                </div>
+                <div class="center" id="toolbar-title">スケさん拡散</div>
+            </ons-toolbar>
+            <ons-list-header class="center">SQL</ons-list-header>
+            <ons-list id="msg" class="comment">
+            </ons-list>
+            <div class="send-area">
+                <ons-list id="pic"></ons-list>
+                <ons-icon icon="fa-plus" size="40px" id="camera" class="send-area__camera" onClick="camera();"></ons-icon>
+                <ons-input id="text" placeholder="メッセージ" class="send-area__input"></ons-input>
+                <ons-button modifier="quiet" class="send-area__btn" onClick="doClick();">
+                    <ons-icon icon="ion-android-send" size="20px"></ons-button>
+            </div>
+        </ons-page>
+    </ons-template>
+
+
+</body>
+
+</html>
