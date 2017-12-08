@@ -1,0 +1,150 @@
+.carousel-item-chevron-l:before {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    color: #ddd;
+    line-height: 28px;
+    height: 28px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    content: "\f104";
+}
+.carousel-item-chevron-r:before {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    color: #ddd;
+    line-height: 28px;
+    height: 28px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    content: "\f105";
+}
+
+div.float-sample-1{/*教科書*/
+float:left;
+width:20%;
+height:25%;
+background:#eeeeee;
+padding: 5%;
+}
+
+div.float-sample-2{/*履修コース*/
+float:left;
+width:70%;
+height:6%;
+background:#32cd32;
+}
+
+div.float-sample-3{
+float:left;
+width:68%;
+height:25%;
+background:#f5deb3;
+padding: 1% 1%;
+}
+
+div.float-sample-4{
+clear:both;
+background:#eeeeea;
+}
+
+table.prefix_sample1 td {/*履修コース*/
+   background:#ffd700;
+    -webkit-border-top-left-radius: 50px;  
+    -webkit-border-top-right-radius: 50px;  
+    -moz-border-radius-topleft: 50px;  
+    -moz-border-radius-topright: 50px; 
+    -webkit-border-bottom-right-radius: 50px;  
+    -webkit-border-bottom-left-radius: 50px;  
+    -moz-border-radius-bottomright: 50px;  
+    -moz-border-radius-bottomleft: 50px; 
+  padding:0px 5px;
+} 
+/*
+.anime04f{
+  font:35px bold;
+  color:#000;
+  padding:25px;
+-webkit-transition: 1s ease-in-out;
+}
+ 
+.anime04f:hover{
+   background:#ffd700;
+    -webkit-border-top-left-radius: 50px;  
+    -webkit-border-top-right-radius: 50px;  
+    -moz-border-radius-topleft: 50px;  
+    -moz-border-radius-topright: 50px; 
+    -webkit-border-bottom-right-radius: 50px;  
+    -webkit-border-bottom-left-radius: 50px;  
+    -moz-border-radius-bottomright: 50px;  
+    -moz-border-radius-bottomleft: 50px; 
+}
+*/
+.table_syu {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 50%;
+}
+.table_syu th {
+  background-color: #cccccc;
+}
+.table_syu td {
+    width: 100px;
+    word-break:break-all;
+}
+.table_syu thead > tr {
+    height: 5px;
+}
+.table_syu thead > tr > th:nth-of-type(1) {
+    width: 5px;
+}
+.table_syu tbody > tr > th:nth-of-type(1) {
+    height: 50px;
+}
+.table_cou {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.table_cou th {
+  background-color: #cccccc;
+}
+.table_cou th ,
+.table_cou td {
+  height: 30px;
+}
+.table_cou th:nth-of-type(1),
+.table_cou td:nth-of-type(1) {
+    width: 15%;
+}
+.table_cou th:nth-of-type(2),
+.table_cou td:nth-of-type(2) {
+    width: 65%;
+}
+.table_cou td:nth-of-type(2) {
+    text-align: left;
+}
+.table_cou th:nth-of-type(3),
+.table_cou td:nth-of-type(3) {
+    width: 20%;
+}
+
